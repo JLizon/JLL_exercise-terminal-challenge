@@ -19,8 +19,11 @@ for root, dirs, files in os.walk('/workspaces/JLL_exercise-terminal-challenge'):
         file_size = naturalsize(file_size)
         file_date = time.ctime(file_date)
 
-table = pd.DataFrame[["File", "Size", "Modification Date"],[file_path,file_size,file_date]]
-print(table)
+#Creating table from data with pandas:
+        table = [[file_path,file_size,file_date]]
+        table_df = pd.DataFrame(table)
+        table_df.columns = "File", "Size", "Modification Date"
+        print(table_df)
 
 
 
